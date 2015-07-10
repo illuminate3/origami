@@ -3,5 +3,6 @@
 	"slug": "origami",
 	"version": "1.0",
 	"description": "Theme Manager for Rakko.",
+	"order": 5,
 	"enabled": true
 }

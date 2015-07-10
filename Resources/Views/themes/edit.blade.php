@@ -39,59 +39,55 @@
 ]) !!}
 {!! Form::hidden('activeTheme', $activeTheme) !!}
 
-<div class="form-group">
-<div class="input-group">
-	<span class="input-group-addon"><i class="fa fa-gavel fa-fw"></i></span>
-		<input type="text" id="name" name="name" value="{{ $name }}" placeholder="{{ trans('kotoba::general.name') }}" class="form-control" autofocus="autofocus">
-</div>
-</div>
 
-<div class="form-group">
-<div class="input-group">
-	<span class="input-group-addon"><i class="fa fa-gavel fa-fw"></i></span>
-		<input type="text" id="slug" name="slug" value="{{ $slug }}" placeholder="{{ trans('kotoba::general.slug') }}" class="form-control">
-</div>
-</div>
-
-<div class="form-group">
-<div class="input-group">
-	<span class="input-group-addon"><i class="fa fa-gavel fa-fw"></i></span>
-		<input type="text" id="author" name="author" value="{{ $author }}" placeholder="{{ trans('kotoba::general.author') }}" class="form-control">
-</div>
-</div>
-
-<div class="form-group">
-<div class="input-group">
-	<span class="input-group-addon"><i class="fa fa-gavel fa-fw"></i></span>
-		<input type="text" id="description" name="description" value="{{ $description }}" placeholder="{{ trans('kotoba::general.description') }}" class="form-control">
-</div>
-</div>
-
-<div class="form-group">
-<div class="input-group">
-	<span class="input-group-addon"><i class="fa fa-gavel fa-fw"></i></span>
-		<input type="text" id="version" name="version" value="{{ $version }}" placeholder="{{ trans('kotoba::general.version') }}" class="form-control">
-</div>
-</div>
+	<div class="form-group">
+		<label for="name">{{ trans('kotoba::general.name') }}</label>
+		<input type="text" class="form-control" name="name" id="name" value="{{ $name }}" autofocus="autofocus">
+	</div>
 
 
-<label class="checkbox-inline">
-	<input type="checkbox" id="enabled" name="enabled" value="1" {{ $checked }}>
-	&nbsp;{{ trans('kotoba::general.enable') }}
-</label>
+	<div class="form-group">
+		<label for="slug">{{ trans('kotoba::general.slug') }}</label>
+		<input type="text" class="form-control" name="slug" id="slug" value="{{ $slug }}">
+	</div>
+
+
+	<div class="form-group">
+		<label for="description">{{ trans('kotoba::general.description') }}</label>
+		<input type="text" class="form-control" name="description" id="description" value="{{ $description }}">
+	</div>
+
+
+	<div class="form-group">
+		<label for="author">{{ trans('kotoba::general.author') }}</label>
+		<input type="text" class="form-control" name="author" id="author" value="{{ $author }}">
+	</div>
+
+
+	<div class="form-group">
+		<label for="version">{{ trans('kotoba::general.version') }}</label>
+		<input type="text" class="form-control" name="version" id="version" value="{{ $version }}">
+	</div>
+
+
+	<label class="checkbox-inline">
+		<input type="checkbox" id="enabled" name="enabled" value="1" {{ $checked }}>
+		&nbsp;{{ trans('kotoba::general.enable') }}
+	</label>
+
+</div>
 
 
 <hr>
 
 
-<div class="form-group">
+<div class="row">
 <div class="col-sm-12">
 	<input class="btn btn-success btn-block" type="submit" value="{{ trans('kotoba::button.save') }}">
 </div>
 </div>
 
-{!! Form::close() !!}
-
+<br>
 
 <div class="row">
 <div class="col-sm-6">
@@ -107,5 +103,9 @@
 </div>
 
 
+{!! Form::close() !!}
+
 </div> <!-- ./ row -->
+
+
 @stop

@@ -4,18 +4,13 @@
 ## Functionality
 
 
-### Menus
-Define areas that your links will be displayed
-
-
-### MenuLinks
-Add links to the displayed menu areas
+### Themes
+Manage Themes
 
 
 ## Routes
 
-* /admin/menus
-* /admin/menulinks/{id}
+* /admin/themes
 
 
 ## Packages
@@ -58,11 +53,5 @@ vendor:publish --provider="anlutro\LaravelSettings\ServiceProvider"
 
 ## Thanks
 
-
-*
-
-
 ## Partial Code or Ideas
 
-
-* https://github.com/mcamara/laravel-localization/blob/master/src/config/config.php
