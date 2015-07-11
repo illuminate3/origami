@@ -24,6 +24,14 @@ Manage Themes
 
 ## Install
 
+### migration commands
+
+```
+php artisan module:migrate Origmami
+php artisan module:seed Origmami
+```
+
+
 ### publish commands
 
 General Publish "ALL" method
