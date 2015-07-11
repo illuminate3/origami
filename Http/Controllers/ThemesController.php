@@ -71,7 +71,7 @@ Theme::view('modules.yourmodule.your.view')
 //
 // dd($themes);
 
-		return View('origami::themes.index',
+		return Theme::View('origami::themes.index',
 			compact(
 				'activeTheme',
 				'collection',
@@ -149,7 +149,7 @@ dd("show");
 		}
 //dd($checked);
 
-		return View('origami::themes.edit',
+		return Theme::View('origami::themes.edit',
 			compact(
 				'activeTheme',
 				'checked',
