@@ -13,25 +13,8 @@ class ModuleSeeder extends Seeder {
 	public function run()
 	{
 
-// Module Information
-// 		$module = array(
-// 			'name'					=> 'Origami',
-// 			'slug'					=> 'origami',
-// 			'version'				=> '1.0',
-// 			'description'			=> 'Origami is a Rakko module that provides simple Theme Managent ability',
-// 			'enabled'				=> 1,
-// 			'order'					=> 0
-// 		);
-//
-// // Insert Module Information
-// 		if (Schema::hasTable('modules'))
-// 		{
-//
-// 			DB::table('modules')->insert( $module );
-//
-// 		}
 
-// Permission Information
+// Permissions -------------------------------------------------------------
 		$permissions = array(
 			[
 				'name'				=> 'Manage Themes',
@@ -39,23 +22,42 @@ class ModuleSeeder extends Seeder {
 				'description'		=> 'Give permission to user to access the Theme Management area.'
 			],
 		 );
-
-		$permissions = array(
-			[
-				'name'				=> 'Manage Themes',
-				'slug'				=> 'manage_origami',
-				'description'		=> 'Give permission to user to access the Theme Management area.'
-			],
-		 );
-
-
-
-// Insert Permissions
-		DB::table('permissions')->insert( $permissions );
 
 		if (Schema::hasTable('permissions'))
 		{
 			DB::table('permissions')->insert( $permissions );
+		}
+
+
+// Links -------------------------------------------------------------------
+		$link_names = array([
+			'menu_id'				=> 1, // admin menu
+			'position'				=> 7,
+		]);
+
+		$last_insert_id = DB::getPdo()->lastInsertId();
+		$locale_id = DB::table('locales')
+			->where('name', '=', 'English')
+			->where('locale', '=', 'en', 'AND')
+			->pluck('id');
+
+		$ink_name_trans = array([
+			'status'				=> 1,
+			'title'					=> 'Themes',
+			'url'					=> '/admin/themes',
+			'menulink_id'			=> $last_insert_id,
+			'locale_id'				=> $locale_id // English ID
+		]);
+
+// Insert Permissions
+		if (Schema::hasTable('menulinks'))
+		{
+
+// Create Link
+		DB::table('menulinks')->insert( $link_names );
+// Create Link Translation
+		DB::table('menulink_translations')->insert( $ink_name_trans );
+
 		}
 
 
