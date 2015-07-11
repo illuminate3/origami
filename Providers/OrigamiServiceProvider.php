@@ -46,8 +46,7 @@ class OrigamiServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		$this->publishes([
-			__DIR__.'/../Config/core.php' => config_path('core.php'),
-			__DIR__.'/../Config/translator.php' => config_path('translator.php'),
+			__DIR__.'/../Config/origami.php' => config_path('origami.php'),
 // 			__DIR__ . '/../Publish/assets/vendors' => base_path('public/assets/vendors/'),
 // 			__DIR__ . '/../Publish/Plugins' => base_path('app/Plugins/'),
 // 			__DIR__ . '/../Publish/views/plugins/' => base_path('resources/views/plugins/'),
@@ -65,6 +64,11 @@ class OrigamiServiceProvider extends ServiceProvider
 			__DIR__ . '/../Publish/views/plugins/' => base_path('resources/views/plugins/'),
 		], 'views');
 */
+
+		$this->publishes([
+			__DIR__ . '/../Resources/Views/' => public_path('themes/') . Theme::getActive() . '/views/modules/origami/',
+		], 'views');
+
 /*
 		AliasLoader::getInstance()->alias(
 			'Setting',
