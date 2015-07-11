@@ -1,11 +1,14 @@
 <?php
+
 namespace App\Modules\Origami\Providers;
+
+use Illuminate\Support\ServiceProvider;
 
 use App;
 use Config;
 use Lang;
+use Theme;
 use View;
-use Illuminate\Support\ServiceProvider;
 
 
 class OrigamiServiceProvider extends ServiceProvider
