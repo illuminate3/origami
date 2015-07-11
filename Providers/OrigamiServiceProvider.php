@@ -2,7 +2,6 @@
 
 namespace App\Modules\Origami\Providers;
 
-//use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 use App;
@@ -29,7 +28,9 @@ class OrigamiServiceProvider extends ServiceProvider
 
 		$this->registerNamespaces();
 		$this->registerProviders();
+
 	}
+
 
 	/**
 	 * Register the Origami module resource namespaces.
@@ -38,9 +39,9 @@ class OrigamiServiceProvider extends ServiceProvider
 	 */
 	protected function registerNamespaces()
 	{
-//		Lang::addNamespace('origami', realpath(__DIR__.'/../Resources/Lang'));
 		View::addNamespace('origami', realpath(__DIR__.'/../Resources/Views'));
 	}
+
 
 	/**
 	 * Boot the service provider.
@@ -63,13 +64,6 @@ class OrigamiServiceProvider extends ServiceProvider
 		$this->publishes([
 			__DIR__ . '/../Resources/Views/' => public_path('themes/' . Theme::getActive() . '/views/modules/origami/'),
 		], 'views');
-
-/*
-		AliasLoader::getInstance()->alias(
-			'Setting',
-			'anlutro\LaravelSettings\Facade'
-		);
-*/
 
 	}
 
