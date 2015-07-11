@@ -22,6 +22,22 @@ Manage Themes
 * /admin/themes
 
 
+## Install
+
+### publish commands
+
+General Publish "ALL" method
+```
+php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServiceProvider"
+```
+
+Specific Publish tags
+```
+php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServiceProvider" --tag="configs"
+php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServiceProvider" --tag="views"
+```
+
+
 ## Packages
 
 Intended to be used with:

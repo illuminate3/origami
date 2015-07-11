@@ -2,6 +2,7 @@
 
 namespace App\Modules\Origami\Providers;
 
+//use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 use App;
@@ -48,28 +49,19 @@ class OrigamiServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
+
 		$this->publishes([
 			__DIR__.'/../Config/origami.php' => config_path('origami.php'),
-// 			__DIR__ . '/../Publish/assets/vendors' => base_path('public/assets/vendors/'),
-// 			__DIR__ . '/../Publish/Plugins' => base_path('app/Plugins/'),
-// 			__DIR__ . '/../Publish/views/plugins/' => base_path('resources/views/plugins/'),
+			__DIR__ . '/../Resources/Views/' => public_path('themes/' . Theme::getActive() . '/views/modules/origami/'),
 		]);
-/*
-		$this->publishes([
-			__DIR__ . '/../Publish/assets/vendors' => base_path('public/assets/vendors/'),
-		], 'js');
+
 
 		$this->publishes([
-			__DIR__ . '/../Publish/Plugins' => base_path('app/Plugins/'),
-		], 'plugins');
+			__DIR__.'/../Config/origami.php' => config_path('origami.php'),
+		], 'configs');
 
 		$this->publishes([
-			__DIR__ . '/../Publish/views/plugins/' => base_path('resources/views/plugins/'),
-		], 'views');
-*/
-
-		$this->publishes([
-			__DIR__ . '/../Resources/Views/' => public_path('themes/') . Theme::getActive() . '/views/modules/origami/',
+			__DIR__ . '/../Resources/Views/' => public_path('themes/' . Theme::getActive() . '/views/modules/origami/'),
 		], 'views');
 
 /*
@@ -92,8 +84,6 @@ class OrigamiServiceProvider extends ServiceProvider
 		$app = $this->app;
 
 		$app->register('App\Modules\Origami\Providers\RouteServiceProvider');
-// 		$app->register('App\Modules\Core\Providers\ViewComposerServiceProvider');
-// 		$app->register('anlutro\LaravelSettings\ServiceProvider');
 	}
 
 
