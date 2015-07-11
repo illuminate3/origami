@@ -10,26 +10,17 @@ use Config;
 use Flash;
 use Theme;
 
+
 class ThemesController extends OrigamiController {
 
-/*
-{!! Theme::asset('themeslug::css/bootstrap.css') !!}
-{!! Theme::asset('themeslug::js/bootstrap.js') !!}
-Theme::view('modules.yourmodule.your.view')
-*/
 
-	/**
-	 * Create a new UserController instance.
-	 *
-	 * @param  App\Modules\Kagi\Http\Domain\Repositories\ModuleRepository $module
-	 * @return void
-	 */
 	public function __construct()
 	{
 // middleware
 // 		$this->middleware('auth');
 // 		$this->middleware('admin');
 	}
+
 
 	/**
 	 * Display a listing of the resource.
@@ -38,7 +29,6 @@ Theme::view('modules.yourmodule.your.view')
 	 */
 	public function index()
 	{
-// dd("loaded");
 
 		$activeTheme				= Theme::getActive();
 		$themes						= Theme::all();
@@ -51,35 +41,14 @@ Theme::view('modules.yourmodule.your.view')
 			$collection[$theme] = json_decode($jsondata, true);
 		}
 
-
-// dd($collection);
-// dd($collection['themeSkeleton']['slug']);
-// foreach ($themes as $theme) {
-//
-// $slug_property = $theme . '::slug';
-// //dd($slug_property);
-//
-// //dd(Theme::getProperty($slug_property, trans('kotoba::general.error.no_data') . ':' . trans('kotoba::general.slug')));
-//
-// $slug = Theme::getProperty($slug_property, trans('kotoba::general.error.no_data') . ':' . trans('kotoba::general.slug'));
-// print_r($slug);
-//
-// }
-// dd($slug);
-//
-//
-//
-// dd($themes);
-
 		return Theme::View('origami::themes.index',
 			compact(
 				'activeTheme',
 				'collection',
 				'themes'
 			));
-
-
 	}
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -88,10 +57,9 @@ Theme::view('modules.yourmodule.your.view')
 	 */
 	public function create()
 	{
-dd("create");
-//		return view('kagi::users.create', $this->user->create());
-		return view('origami::modules.create');
+		//
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -104,11 +72,9 @@ dd("create");
 		UserCreateRequest $request
 		)
 	{
-dd("store");
-		$this->user->store($request->all());
-
-		return redirect('user')->with('ok', trans('back/users.created'));
+		//
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -118,9 +84,9 @@ dd("store");
 	 */
 	public function show($id)
 	{
-dd("show");
-		return View('origami::modules.show',  $this->module->show($id));
+		//
 	}
+
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -130,9 +96,6 @@ dd("show");
 	 */
 	public function edit($theme)
 	{
-//dd("edit");
-//		$theme = $this->themeRepo->edit($slug);
-//		return View('origami::themes.edit',  $this->module->edit($id));
 
 		$activeTheme				= Theme::getActive();
 		$slug						= Theme::getProperty( $theme . '::slug', trans('kotoba::general.error.no_data') . ':' . trans('kotoba::general.slug'));
@@ -160,6 +123,7 @@ dd("show");
 				'version'
 			));
 	}
+
 
 	/**
 	 * Update the specified resource in storage.
@@ -199,6 +163,7 @@ dd("show");
 		return redirect('admin/themes');
 	}
 
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -210,10 +175,7 @@ dd("show");
 		$id
 		)
 	{
-dd("destroy");
-		$this->user->destroy($id);
-
-		return redirect('user')->with('ok', trans('back/users.destroyed'));
+		//
 	}
 
 

@@ -41,18 +41,7 @@ class OrigamiController extends Controller
 	 */
 	public function welcome()
 	{
-		return Theme::View('modules.origami.general');
-	}
-
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return Theme::View('modules.origami.landing');
+		return Theme::View('modules.origami.welcome.origami');
 	}
 
 

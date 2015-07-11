@@ -20,7 +20,14 @@
 
 	<div class="container">
 		<div class="content">
-			<div class="title">Origami</div>
+			<a href="/">
+				<img src="/assets/images/origami.jpg">
+			</a>
+			<div class="title">
+				<a href="/">
+					Origami
+				</a>
+			</div>
 			<div class="quote">
 				Origami is a Rakko module that provides the ability to manage themes
 			</div>

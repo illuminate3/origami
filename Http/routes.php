@@ -11,9 +11,13 @@
 // Resources
 // Controllers
 
-Route::get('welcome/origami', array(
-	'uses'=>'OrigamiController@welcome'
-	));
+
+Route::group(['prefix' => 'origami'], function() {
+	Route::get('welcome', [
+		'uses'=>'OrigamiController@welcome'
+	]);
+});
+
 
 // API DATA
 
@@ -45,9 +49,3 @@ Route::group(['prefix' => 'admin'], function() {
 
 });
 // --------------------------------------------------------------------------
-
-Route::group(['prefix' => 'origami'], function() {
-	Route::get('/', function() {
-		dd('This is the Origami module index page.');
-	});
-});
