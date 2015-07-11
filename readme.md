@@ -42,6 +42,7 @@ php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServ
 Specific Publish tags
 ```
 php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServiceProvider" --tag="configs"
+php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServiceProvider" --tag="images"
 php artisan vendor:publish --provider="App\Modules\Origami\Providers\OrigamiServiceProvider" --tag="views"
 ```
 

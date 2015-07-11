@@ -53,6 +53,7 @@ class OrigamiServiceProvider extends ServiceProvider
 
 		$this->publishes([
 			__DIR__.'/../Config/origami.php' => config_path('origami.php'),
+ 			__DIR__ . '/../Resources/Assets/Images' => base_path('public/assets/images/'),
 			__DIR__ . '/../Resources/Views/' => public_path('themes/' . Theme::getActive() . '/views/modules/origami/'),
 		]);
 
@@ -60,6 +61,10 @@ class OrigamiServiceProvider extends ServiceProvider
 		$this->publishes([
 			__DIR__.'/../Config/origami.php' => config_path('origami.php'),
 		], 'configs');
+
+		$this->publishes([
+ 			__DIR__ . '/../Resources/Assets/Images' => base_path('public/assets/images/'),
+		], 'images');
 
 		$this->publishes([
 			__DIR__ . '/../Resources/Views/' => public_path('themes/' . Theme::getActive() . '/views/modules/origami/'),
