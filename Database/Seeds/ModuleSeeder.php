@@ -40,8 +40,23 @@ class ModuleSeeder extends Seeder {
 			],
 		 );
 
+		$permissions = array(
+			[
+				'name'				=> 'Manage Themes',
+				'slug'				=> 'manage_origami',
+				'description'		=> 'Give permission to user to access the Theme Management area.'
+			],
+		 );
+
+
+
 // Insert Permissions
 		DB::table('permissions')->insert( $permissions );
+
+		if (Schema::hasTable('permissions'))
+		{
+			DB::table('permissions')->insert( $permissions );
+		}
 
 
 	} // run
