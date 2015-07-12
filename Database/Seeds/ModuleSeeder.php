@@ -25,7 +25,7 @@ class ModuleSeeder extends Seeder {
 
 		if (Schema::hasTable('permissions'))
 		{
-//			DB::table('permissions')->insert( $permissions );
+			DB::table('permissions')->insert( $permissions );
 		}
 
 
