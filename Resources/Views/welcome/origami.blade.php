@@ -21,7 +21,7 @@
 	<div class="container">
 		<div class="content">
 			<a href="/">
-				<img src="/assets/images/origami.jpg">
+				<img src="/assets/images/origami.jpg" class="img-responsive">
 			</a>
 			<div class="title">
 				<a href="/">
