@@ -17,7 +17,7 @@ class ThemesController extends OrigamiController {
 	public function __construct()
 	{
 // middleware
-// 		$this->middleware('auth');
+		$this->middleware('auth');
 // 		$this->middleware('admin');
 	}
 
