@@ -23,14 +23,9 @@ class OrigamiController extends Controller
 	 */
 	public function __construct()
 	{
-/*
-		parent::__construct();
-		$this->middleware('csrf');
-		$this->middleware('auth');
-*/
 // middleware
-// 		$this->middleware('auth');
-// 		$this->middleware('admin');
+		$this->middleware('auth');
+		$this->middleware('admin');
 	}
 
 
