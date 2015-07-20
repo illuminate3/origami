@@ -2,7 +2,7 @@
 
 {{-- Web site Title --}}
 @section('title')
-{{ Config::get('general.title') }} :: @parent
+{{ Config::get('core.title') }} :: @parent
 @stop
 
 @section('styles')
