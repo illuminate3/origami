@@ -150,6 +150,7 @@ class ThemesController extends OrigamiController {
 		$enabled					= $request->enabled;
 
 		if ( ($slug != $activeTheme) && ($enabled == 1) ) {
+			Cache::forget('theme');
 			Theme::setActive($slug);
 			Cache::forever('theme', $slug);
 		}
