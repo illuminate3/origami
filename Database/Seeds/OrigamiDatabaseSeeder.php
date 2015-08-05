@@ -4,6 +4,7 @@ namespace App\Modules\Origami\Database\Seeds;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+
 class OrigamiDatabaseSeeder extends Seeder
 {
 	/**
