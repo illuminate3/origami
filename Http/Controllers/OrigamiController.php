@@ -3,9 +3,6 @@
 namespace App\Modules\Origami\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 
 use Theme;
 
@@ -13,8 +10,6 @@ use Theme;
 class OrigamiController extends Controller
 {
 
-
-	use DispatchesJobs, ValidatesRequests;
 
 	/**
 	 * Initializer.
