@@ -27,8 +27,8 @@ Manage Themes
 ### migration commands
 
 ```
-php artisan module:migrate Origmami
-php artisan module:seed Origmami
+php artisan module:migrate Origami
+php artisan module:seed Origami
 ```
 
 
