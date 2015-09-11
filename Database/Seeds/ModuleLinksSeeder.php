@@ -7,27 +7,11 @@ Use DB;
 use Schema;
 
 
-class ModuleSeeder extends Seeder {
+class ModuleLinksSeeder extends Seeder {
 
 
 	public function run()
 	{
-
-
-// Permissions -------------------------------------------------------------
-		$permissions = array(
-			[
-				'name'				=> 'Manage Themes',
-				'slug'				=> 'manage_origami',
-				'description'		=> 'Give permission to user to access the Theme Management area.'
-			],
-		 );
-
-		if (Schema::hasTable('permissions'))
-		{
-			DB::table('permissions')->insert( $permissions );
-		}
-
 
 // Links -------------------------------------------------------------------
 		$link_names = array([
@@ -58,7 +42,6 @@ class ModuleSeeder extends Seeder {
 		{
 			DB::table('menulink_translations')->insert( $ink_name_trans );
 		}
-
 
 	} // run
 
