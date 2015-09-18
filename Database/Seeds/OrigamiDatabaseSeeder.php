@@ -16,7 +16,7 @@ class OrigamiDatabaseSeeder extends Seeder
 	{
 		Model::unguard();
 
-//		$this->call('App\Modules\Origami\Database\Seeds\ModulePermissionsSeeder');
+		$this->call('App\Modules\Origami\Database\Seeds\ModulePermissionsSeeder');
 		$this->call('App\Modules\Origami\Database\Seeds\ModuleLinksSeeder');
 
 	}
