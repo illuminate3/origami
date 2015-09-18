@@ -7,26 +7,15 @@ Use DB;
 use Schema;
 
 
-class ModuleSeeder extends Seeder
-{
+class ModuleLinksSeeder extends Seeder {
 
 
 	public function run()
 	{
 
-		$admin_id = DB::table('menus')
-			->where('name', '=', 'admin')
-			->pluck('id');
-
-		if ($admin_id == null) {
-			$admin_id = 1;
-		}
-
-
 // Links -------------------------------------------------------------------
-// thmese
 		$link_names = array([
-			'menu_id'				=> $admin_id, // admin menu
+			'menu_id'				=> 1, // admin menu
 			'position'				=> 7,
 		]);
 
@@ -53,7 +42,6 @@ class ModuleSeeder extends Seeder
 		{
 			DB::table('menulink_translations')->insert( $ink_name_trans );
 		}
-
 
 	} // run
 
