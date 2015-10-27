@@ -13,9 +13,18 @@ class ModuleLinksSeeder extends Seeder {
 	public function run()
 	{
 
+		$admin_id = DB::table('menus')
+			->where('name', '=', 'admin')
+			->pluck('id');
+
+		if ($admin_id == null) {
+			$admin_id = 1;
+		}
+
 // Links -------------------------------------------------------------------
 		$link_names = array([
-			'menu_id'				=> 1, // admin menu
+			'menu_id'				=> $admin_id,
+			'status'				=> 1,
 			'position'				=> 7,
 		]);
 
@@ -31,7 +40,6 @@ class ModuleLinksSeeder extends Seeder {
 			->pluck('id');
 
 		$ink_name_trans = array([
-			'status'				=> 1,
 			'title'					=> 'Themes',
 			'url'					=> '/admin/themes',
 			'menulink_id'			=> $last_insert_id,
